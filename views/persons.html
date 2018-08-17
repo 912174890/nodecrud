@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%=title%></title>
+</head>
+<body>
+<a href="/persons/add">添加</a>
+    <table border="1">
+        <tr>
+            <th>编号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>职业</th>
+            <th colspan="2">操作</th>
+        </tr>
+        <%if(datas.length){%>
+        <% datas.forEach(function(person){ %>
+
+
+        <tr>
+            <td><%=person.id%></td>
+            <td><%=person.name%></td>
+            <td><%=person.age%></td>
+            <td><%=person.professional%></td>
+            <td>
+                <a href="/persons/toupdate/<%=person.id%>">修改</a>
+            </td>
+            <td>
+                <a href="/persons/del/<%=person.id%>">删除</a>
+            </td>
+        </tr>
+
+        <%  })%>
+        <%  }%>
+    </table>
+
+</body>
+</html>
